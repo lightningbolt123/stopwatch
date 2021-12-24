@@ -80,7 +80,7 @@ export default function StopWatch() {
                         </div>
                     </div>
                 </div>
-                <div className="row mt-3 mx-auto">
+                <div className="row mt-3" style={{ margin: 'auto', width:'200px', padding:'10px'}}>
                     <button className="btn btn-success mr-4" onClick={() => startAndPause(active)}>
                         <i className="fas fa-play" style={{ paddingRight:'5px' }}></i>/<i className="fas fa-pause" style={{ paddingLeft:'5px' }}></i>
                     </button>
