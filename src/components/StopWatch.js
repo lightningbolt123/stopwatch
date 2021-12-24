@@ -61,21 +61,21 @@ export default function StopWatch() {
                 <div className="row">
                     <div className="col-4" style={{ paddingRight:'10px'}}>
                         <label><h4 className="display-4 text-center">HH</h4></label>
-                        <div style={{ width: '100px', height: '100px', border:'1px solid rgba(0, 0, 0, 0.1)', padding:'10px'}}>
+                        <div style={{ width: '100px', height: '100px', border:'1px solid rgba(0, 0, 0, 0.1)'}}>
                             <h1 className="display-3">{h < 10 ? `0${h}` : h}</h1>
                         </div>
                     </div>
 
                     <div className="col-4" style={{ paddingRight:'10px'}}>
                         <label><h4 className="display-4 text-center">MM</h4></label>
-                        <div style={{ width: '100px', height: '100px', border:'1px solid rgba(0, 0, 0, 0.1)', padding:'10px'}}>
+                        <div style={{ width: '100px', height: '100px', border:'1px solid rgba(0, 0, 0, 0.1)'}}>
                             <h1 className="display-3">{m < 10 ? `0${m}` : m}</h1>
                         </div>
                     </div>
 
                     <div className="col-4" style={{ paddingRight:'10px'}}>
                         <label><h4 className="display-4 text-center">SS</h4></label>
-                        <div style={{ width: '100px', height: '100px', border:'1px solid rgba(0, 0, 0, 0.1)', padding:'10px'}}>
+                        <div style={{ width: '100px', height: '100px', border:'1px solid rgba(0, 0, 0, 0.1)'}}>
                             <h1 className="display-3">{s < 10 ? `0${s}` : s}</h1>
                         </div>
                     </div>
