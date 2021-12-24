@@ -58,7 +58,7 @@ export default function StopWatch() {
                 <h1 className="display-4">Magic Stopwatch</h1>
             </div>
             <div className="card-body mx-auto">
-                <div className="row" style={{ padding: '5px' }}>
+                <div className="row">
                     <div className="col-4" style={{ paddingRight:'10px'}}>
                         <label><h4 className="display-4 text-center">HH</h4></label>
                         <div style={{ width: '100px', height: '100px', border:'1px solid rgba(0, 0, 0, 0.1)'}}>
@@ -73,7 +73,7 @@ export default function StopWatch() {
                         </div>
                     </div>
 
-                    <div className="col-4">
+                    <div className="col-4" style={{ paddingRight:'10px'}}>
                         <label><h4 className="display-4 text-center">SS</h4></label>
                         <div style={{ width: '100px', height: '100px', border:'1px solid rgba(0, 0, 0, 0.1)'}}>
                             <h1 className="display-3">{s < 10 ? `0${s}` : s}</h1>
