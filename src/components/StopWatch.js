@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { interval, Subject } from "rxjs";
-import { takeUntil } from "rxjs/operators";
+import { takeUntil, take } from "rxjs/operators";
 
 import DisplayComponent from './DisplayComponent';
 import BtnComponent from './BtnComponent';
@@ -39,19 +39,24 @@ function StopWatch() {
     handleStart();
   }
 
+  const handleWait = () => {}
+
 
   const handleStop = () => {
     if (time !== 0) {
       setWatchOn(false);
     }
+    setTime(0);
     setStatus(2);
   }
 
 
   const handleReset = () => {
-    setTime(0);
-    setWatchOn(false);
-    setStatus(0);
+    if (status === 1) {
+      setTime(0);
+      setWatchOn(true);
+      setStatus(1);
+    }
   }
 
     return (
@@ -67,6 +72,7 @@ function StopWatch() {
                   start={handleStart}
                   stop={handleStop}
                   reset={handleReset}
+                  wait = {handleWait}
                   resume={handleResume}
                   status={status}
               />

@@ -53,6 +53,12 @@ body {
   transition: background .5s;
   cursor: pointer;
 }
+
+.stopwatch .stopwatch-btn-grn{
+  border: 2px solid #05f887;
+  color: #05f887;
+}
+
 .stopwatch .stopwatch-btn-red{
   border: 2px solid #C85454;
   color: #C85454;
@@ -66,6 +72,13 @@ body {
   border: 2px solid #2C3E50;
   color: #2C3E50;
 }
+
+.stopwatch .stopwatch-btn-grn:hover {
+  background: #05f887;
+  border: 2px solid #05f887;
+  color: #fff;
+}
+
 .stopwatch .stopwatch-btn-red:hover {
   background: #C85454;
   border: 2px solid #C85454;
