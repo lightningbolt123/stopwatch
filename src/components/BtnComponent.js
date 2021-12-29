@@ -1,6 +1,6 @@
 import React from 'react';
 
-function BtnComponent({ start, stop, wait, reset, resume, status }) {
+function BtnComponent({ start, stop, reset, resume, status }) {
   return (
       <div>
           {status === 0 && (
@@ -9,7 +9,7 @@ function BtnComponent({ start, stop, wait, reset, resume, status }) {
                         onClick={start}>Start</button>
             
                     <button className="stopwatch-btn stopwatch-btn-red"
-                            onClick={wait}>Wait</button>
+                            id="butID" type="button">Wait</button>
             
                     <button className="stopwatch-btn stopwatch-btn-yel"
                             onClick={reset}>Reset</button>
@@ -22,7 +22,7 @@ function BtnComponent({ start, stop, wait, reset, resume, status }) {
                                     onClick={stop}>Stop</button>
                         
                                 <button className="stopwatch-btn stopwatch-btn-blu"
-                                        onClick={wait}>Wait</button>
+                                        id="butID" type="button">Wait</button>
                         
                                 <button className="stopwatch-btn stopwatch-btn-yel"
                                         onClick={reset}>Reset</button>
@@ -35,7 +35,7 @@ function BtnComponent({ start, stop, wait, reset, resume, status }) {
                                             onClick={start}>Start</button>
                                 
                                         <button className="stopwatch-btn stopwatch-btn-red"
-                                                onClick={wait}>Wait</button>
+                                                id="butID" type="button">Wait</button>
                                 
                                         <button className="stopwatch-btn stopwatch-btn-yel"
                                                 onClick={reset}>Reset</button>
