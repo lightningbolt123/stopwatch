@@ -1,6 +1,6 @@
 import React from 'react';
 
-function BtnComponent({ start, stop, reset, resume, status }) {
+function BtnComponent({ start, stop, reset, status }) {
   return (
       <div>
           {status === 0 && (

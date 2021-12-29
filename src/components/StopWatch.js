@@ -18,22 +18,15 @@ function StopWatch() {
     // Detect a click event from the button
     const click$ = fromEvent(buttonEl,'click');
 
-    // Chain function for detecting double click
-    const doubleClick$ = click$.pipe(bufferWhen(() => click$.pipe(debounceTime(250))))
-    .pipe(map(arr => arr.length)).pipe(filter(len => len === 2));
-
-    // Check if the stopwatch is running  and stop the watch
-    if (doubleClick$ && watchOn === true) {
-      doubleClick$.subscribe(event => setWatchOn(false));
-    }
-
-    // Check if the stopwatch is not running and resume the countdown
-    if (doubleClick$ && watchOn === false) {
-      doubleClick$.subscribe(event => setWatchOn(true));
-    }
-
     // Create a new unsubscription object using the Subject class
     const unsubscribe = new Subject();
+
+    // Chain function for detecting double click
+    const doubleClick$ = click$.pipe(takeUntil(unsubscribe)).pipe(bufferWhen(() => click$.pipe(debounceTime(250))))
+    .pipe(map(arr => arr.length)).pipe(filter(len => len === 2));
+
+    // Pause and play the stopwatch
+    doubleClick$.subscribe(event => setWatchOn(prevCount => !prevCount));
 
     // Creating a chain function for running the watch 
     interval(10)
@@ -95,7 +88,6 @@ function StopWatch() {
                   start={handleStart}
                   stop={handleStop}
                   reset={handleReset}
-                  resume={handleResume}
                   status={status}
               />
             </div>
